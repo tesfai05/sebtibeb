@@ -1,0 +1,29 @@
+html{
+	min-height:100%;	
+}
+body{
+	margin-bottom:100px;
+	
+}
+footer{
+	position:fixed;
+	bottom:0;
+	width:100%;
+	hieght:50px;
+	line_height:50px;
+	backgroundcolor:#f5f5f5;
+}
+
+#development{
+	text-align: center;
+	
+}
+
+#development>h4{
+	margin-top: 3%;
+	color: red;
+}
+#development>img{
+	width:400px;
+	height:300px
+}

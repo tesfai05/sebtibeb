@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layouts/main-layout}">
+<head>
+<meta charset="ISO-8859-1">
+
+<title>SEBTIBEB - Members Collection</title>
+</head>
+<body>
+	<div class="container" layout:fragment="content">
+		<h2 style="text-align: center">List of Member </h2>
+		<div>
+			<table class="table table-striped ">
+				<thead>
+					<tr>
+						<th scope="col">#</th>
+						<th scope="col">First Name</th>
+						<th scope="col">Middle Name</th>
+						<th scope="col">Last Name</th>
+						<th scope="col">Address</th>
+						<th scope="col" colspan="2">Action</th>
+
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="member, std : ${members}">
+						<th scope="row" th:text="${std.count}"></th>
+						<td th:text="${member.firstName}"></td>
+						<td th:text="${member.middleName}"></td>
+						<td th:text="${member.lastName}"></td>
+						<td th:text="${member.address}"></td>
+						<td><a th:href="@{'/editmember/' + ${member.memberId}}" class="btn btn-primary">Edit</a></td>
+						<td ><a th:href="@{'/deletemember/' + ${member.memberId}}" class="btn btn-danger">Delete</a></td>
+					
+					</tr>
+					<tr th:if="${memberCount < 1}">
+						<td colspan="9" style="text-align: center">Currently No
+							Member is Available</td>
+					</tr>
+
+				</tbody>
+
+			</table>
+			<hr />
+		</div>
+	</div>
+</body>
+</html>
